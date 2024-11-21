@@ -1,0 +1,140 @@
+.open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "width" 100;
+}
+
+/* -------- */
+
+.section {
+    position: relative;
+    min-height: 100vh;
+}
+
+.hero {
+    position: relative;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .9);
+    animation: opacityCover 3.5s;
+    z-index: 2;
+}
+
+@keyframes opacityCover {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, .9);
+    }
+}
+
+
+.hero-background {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    margin: 0 auto 64px;
+    text-align: center;
+    color: #fff;
+    z-index: 3;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .hero-container {
+        max-width: 1000px;
+    }
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto 64px;
+    text-align: center;
+    color: #fff;
+    z-index: 3;
+}
+
+.hero-container-title {
+    overflow: hidden;
+    border-right: .15em solid #ff8800;
+    white-space: nowrap;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #ff8800;
+    }
+}
+
+
+.hero-container-subtitle {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 1;
+    animation: openSubtitle 3.5s;
+}
+
+@keyframes openSubtitle {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
